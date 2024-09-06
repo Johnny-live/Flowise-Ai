@@ -12,8 +12,14 @@ RUN npm install -g flowise
 # Stage 2: Runtime stage
 FROM node:20-alpine
 
+# Create the root directory
+# RUN mkdir .flowise
+
 # Install runtime dependencies
 RUN apk add --no-cache chromium git python3 py3-pip make g++ build-base cairo-dev pango-dev
+
+#install PNPM globaly
+RUN npm install -g pnpm
 
 # Set the environment variable for Puppeteer to find Chromium
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser

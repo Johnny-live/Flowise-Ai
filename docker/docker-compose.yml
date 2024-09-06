@@ -1,4 +1,4 @@
-version: '3.1'
+# version: '3.1'
 
 services:
     flowise:
@@ -32,5 +32,5 @@ services:
         ports:
             - '${PORT}:${PORT}'
         volumes:
-            - ~/.flowise:/root/.flowise
+            - ~/Documents/AI_Doc_ChatBot/Flowise/.flowise:/root/.flowise
         entrypoint: /bin/sh -c "sleep 3; flowise start"
